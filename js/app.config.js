@@ -12,6 +12,11 @@
                     templateUrl: 'js/views/contactsList.html',
                     controllerAs: 'contactsCtrl'
                 })
+                .when("/giphy", {
+                    controller: 'GiphyController',
+                    templateUrl: 'js/views/giphyList.html',
+                    controllerAs: 'giphyCtrl'
+                } )
         }
 
     })();

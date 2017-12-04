@@ -1,0 +1,10 @@
+<input type="text" ng-model="giphyCtrl.input" ng-change="giphyCtrl.giveMeGifts()">
+<button ng-click="giphyCtrl.giveMeGifts()">Traer Gifts</button>
+<button ng-click="giphyCtrl.nextOffset()">Next</button>
+<button ng-if="giphyCtrl.offset > 7" ng-click="giphyCtrl.prevOffset()">Prev</button>
+
+<div class="gif-container flex">
+    <div class="gif-item" ng-repeat="gif in giphyCtrl.list">
+        <img src="{{gif.images.fixed_width.url}}" alt="">
+    </div>
+</div>
