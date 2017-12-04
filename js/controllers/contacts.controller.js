@@ -10,7 +10,6 @@
         var vm = this;
 
         // Variables
-        vm.form = {};
         vm.contacts = {};
 
         // Functions
@@ -24,10 +23,11 @@
             vm.contacts = ContactProvider.getAll();
          }
          function addContact() {
+             console.log(vm.name);
              let contact = {
-                 name : vm.form.name || "Nombre aleatorio",
-                 email : vm.form.email || "aleatorio@correo.es",
-                 photo : vm.form.photo || "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=750&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
+                 name : vm.name || "Nombre aleatorio",
+                 email : vm.email || "aleatorio@correo.es",
+                 photo : vm.photo || "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=750&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
                  id : Date.now()
              }
              ContactProvider.add(contact);

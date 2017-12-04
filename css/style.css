@@ -52,31 +52,31 @@ section {
 aside {
     width: 40%;
 }
-.clients-list {
+.contacts-list {
     display: flex;
     flex-wrap: wrap;
     min-height: 300px;
     justify-content: space-between;
 }
-.client-item {
+.contact-item {
     display: flex;
     width: 45%;
     flex-direction: column;
     justify-content: space-between;
     margin: 1%;
 }
-.client-item-cont {
+.contact-item-cont {
     box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
     border-radius: 2px;
     margin-bottom: 8px;
     background-color: rgba(222,222,222, 0.4);
 }
-.client-item-image img {
+.contact-item-image img {
     max-width: 100%;
     width: 100%;
     border-bottom: 4px solid rgba(222,222,222, 0.6);
 }
-.client-item-info {
+.contact-item-info {
     padding: 12px 24px;
 }
 .search-bar {
