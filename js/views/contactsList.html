@@ -1,0 +1,58 @@
+<main class="flex center space-a">
+    <section class="contacts-list flex space-b">
+        <div class="contact-item" ng-repeat="contact in contactsCtrl.contacts">
+            <div class="contact-item-cont">
+                <div class="contact-item-image">
+                    <img src="{{contact.photo}}" alt="Imagen de perfil de {{contact.name}}">
+                </div>
+                {{contact.name}}
+            </div>
+        </div>
+    </section>
+
+    <aside class="flex column space-b">
+        <form class="form-group flex column space-b">
+            <div class="input-group-iconic flex column center">
+                <div class="flex center search-bar">
+                    <i class="fa fa-user-circle" ng-class="{error: !clientForm.newName.$valid && clientForm.newName.$touched && clientForm.newName.$dirty}" aria-hidden="true"></i>
+                    <input ng-minlength="5" type="text" name="newName" id="newName" ng-model="contactsCtrl.name" ng-change="" ng-required="true" placeholder="Nombre">
+                    <small class="checked" ng-if="clientForm.newName.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
+                </div>
+                <div class="flex">
+                    <small class="error-text" ng-if="clientForm.newName.$invalid && clientForm.newName.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
+                </div>
+            </div>
+            <div class="input-group-iconic flex column center">
+                <div class="flex center search-bar">
+                    <i class="fa fa-user-circle" ng-class="{error: !clientForm.newName.$valid && clientForm.newName.$touched && clientForm.newName.$dirty}" aria-hidden="true"></i>
+                    <input ng-minlength="5" type="text" name="newName" id="newName" ng-model="contactsCtrl.name" ng-change="" ng-required="true" placeholder="Nombre">
+                    <small class="checked" ng-if="clientForm.newName.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
+                </div>
+                <div class="flex">
+                    <small class="error-text" ng-if="clientForm.newName.$invalid && clientForm.newName.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
+                </div>
+            </div>
+            <div class="input-group-iconic flex column center">
+                <div class="flex center search-bar">
+                    <i class="fa fa-user-circle" ng-class="{error: !clientForm.newName.$valid && clientForm.newName.$touched && clientForm.newName.$dirty}" aria-hidden="true"></i>
+                    <input ng-minlength="5" type="text" name="newName" id="newName" ng-model="contactsCtrl.name" ng-change="" ng-required="true" placeholder="Nombre">
+                    <small class="checked" ng-if="clientForm.newName.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
+                </div>
+                <div class="flex">
+                    <small class="error-text" ng-if="clientForm.newName.$invalid && clientForm.newName.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
+                </div>
+            </div>
+            <div class="input-group-iconic flex column center">
+                <div class="flex center search-bar">
+                    <i class="fa fa-user-circle" ng-class="{error: !clientForm.newName.$valid && clientForm.newName.$touched && clientForm.newName.$dirty}" aria-hidden="true"></i>
+                    <input ng-minlength="5" type="text" name="newName" id="newName" ng-model="contactsCtrl.name" ng-change="" ng-required="true" placeholder="Nombre">
+                    <small class="checked" ng-if="clientForm.newName.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
+                </div>
+                <div class="flex">
+                    <small class="error-text" ng-if="clientForm.newName.$invalid && clientForm.newName.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
+                </div>
+            </div>
+            <button ng-click="contactsCtrl.addContact()">Añadir</button>
+        </form>
+    </aside>
+</main>
