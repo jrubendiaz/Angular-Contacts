@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Angular JS - Contacts Manager</title>
 </head>
-<body ng-app="Angular-Contacts">
+<body ng-app="AngularContacts">
 
+    <div ng-view></div>
 
     <!-- Angular CORE -->
-    <script src="node_modules/angular/angular.js"></script>
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.min.js"></script>
     <!-- App -->
     <script src="js/app.config.js"></script>
+    <!-- Services -->
+    <script src="js/services/contactsProvider.factory.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/contacts.controller.js"></script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+<div class="contacts-form">
+    <input ng-model="contactsCtrl.form.name" type="text" />
+    <button ng-click="contactsCtrl.addContact()">Añadir</button>
+</div>
+<div class="contacts-list">
+    <div class="contact-item" ng-repeat="contact in contactsCtrl.contacts">
+        {{contact.name}}
+    </div>
+</div>

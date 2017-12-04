@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+}
+header {
+    min-height: 15vh;
+}
+nav {
+    width: 100%;
+    padding: 18px 0px;
+    border-bottom: 1px solid rgba(222,222,222, 0.2);
+    box-shadow: 0px 0px 20px rgba(222,222,222, 0.4);
+    background-color: rgba(222,222,222, 0.4);
+}
+nav h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    font-family: 'Lobster', cursive;
+}
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.space-b {
+    justify-content: space-between;
+}
+.space-a {
+    justify-content: space-around;
+}
+.end {
+    align-self: flex-end;
+}
+main {
+    box-sizing: border-box;
+}
+section {
+    width: 45%;
+    height: 90vh;
+}
+aside {
+    width: 40%;
+}
+.clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+    justify-content: space-between;
+}
+.client-item {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1%;
+}
+.client-item-cont {
+    box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    border-radius: 2px;
+    margin-bottom: 8px;
+    background-color: rgba(222,222,222, 0.4);
+}
+.client-item-image img {
+    max-width: 100%;
+    width: 100%;
+    border-bottom: 4px solid rgba(222,222,222, 0.6);
+}
+.client-item-info {
+    padding: 12px 24px;
+}
+.search-bar {
+    border-radius: 3px;
+    background-color: rgba(222,222,222, 0.4);
+    display: flex;
+    box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    margin: 12px;
+}
+.search-bar span {
+    width: 50px;
+    border-right: 2px solid rgba(22,22,22, 0.1);
+}
+.search-bar .fa {
+    transition: all ease-in-out 400ms;
+    padding: 14px;
+}
+.search-bar .fa.active {
+    transform: translateX(0);
+    transform: scale(1.4);
+    color: rgba(10, 200, 200, 0.8);
+}
+
+.search-bar input, select, textarea {
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    border-bottom: 2px solid rgba(22,22,22,0);
+    font-size: 1.5em;
+    transform: transition 400ms ease-out;
+    color: rgb(22,22,22);
+    font-weight: 100;
+    flex: 1;
+}
+.search-bar textarea:active, input:active, textarea:focus, input:focus, select:active, select:focus, textarea:hover, select:hover {
+    box-shadow: none;
+    outline: none;
+}
+.form-group {
+    height: 75vh;
+    padding: 24px 16px;
+    background-color: rgba(100,100,100, 0.1);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+}
+.form-group .search-bar {
+    background-color: rgb(244,244,244);
+    box-shadow: 1px 2px 2px rgba(222,222,222, 0.8) inset;
+    border: 1px solid rgba(222,222,222, 0.6);
+    width: 80%;
+}
+.form-group .search-bar input {
+    font-size: 1em;
+}
+.form-actions {
+    width: 100%;
+}
+.form-actions .action {
+    width: 50%;
+    margin: 8px;
+}
+.form-actions .action button {
+    font-weight: 800;
+    cursor: pointer;
+}
+.form-group input, textarea {
+    display: block;
+    margin-top: 0;
+    background: none;
+    padding: 2px 2px 1px;
+    border-width: 0 0 1px;
+    line-height: 26px;
+    height: 30px;
+    -ms-flex-preferred-size: 26px;
+    border-radius: 0;
+    border-style: solid;
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+    border-color: rgba(0,0,0,0.12);
+}
+.input-group-iconic {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.input-group-iconic input, select {
+    max-width: 80%;
+}
+.input-group-iconic textarea {
+    resize: none;
+    overflow: hidden;
+    height: 135px;
+    position: relative;
+    line-height: 26px;
+    font-size: 16px;
+}
+.btn {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    min-height: 36px;
+    min-width: 88px;
+    line-height: 36px;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    border: 0;
+    padding: 0 6px;
+    margin: 6px 8px;
+    background: transparent;
+    color: currentColor;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: inherit;
+    font-variant: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    -webkit-transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
+    transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+.btn-circle {
+    z-index: 20;
+    line-height: 56px;
+    min-width: 0;
+    width: 56px;
+    height: 56px;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    border-radius: 50%;
+    background-clip: padding-box;
+    overflow: hidden;
+    -webkit-transition: all .3s cubic-bezier(.55,0,.55,.2);
+    transition: all .3s cubic-bezier(.55,0,.55,.2);
+    -webkit-transition-property: background-color,box-shadow,-webkit-transform;
+    transition-property: background-color,box-shadow,-webkit-transform;
+    transition-property: background-color,box-shadow,transform;
+    transition-property: background-color,box-shadow,transform,-webkit-transform;
+}
+.btn-delete {
+    background-color: rgb(255,82,82);
+    color: rgb(255,255,255);
+}
+.btn-update {
+    background-color: rgb(76,158,241);
+    color: rgb(255,255,255);
+}
+.form-actions .action button {
+    width: 100%;
+}
+.error {
+    color: rgb(255,82,82);
+    transform: scale(1.5);
+}
+.error-text {
+    color: rgb(244,244,244);
+    font-weight: 400;
+    font-size: 10px;
+    background-color: rgb(255,82,82);
+    padding: 6px 8px;
+    border-radius: 3px;
+}
+.checked {
+    color: rgb(82,255,82);
+}
