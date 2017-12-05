@@ -20,6 +20,7 @@
         vm.prevOffset = prevOffset;
         vm.addToFavorite = addToFavorite;
         vm.isIn = isIn;
+        vm.removeFromFavorite = removeFromFavorite;
 
         activate();
 
@@ -42,12 +43,20 @@
              giveMeComics();
          }
          function addToFavorite(comic) {
-            vm.favorite_list.push(comic);
+            !isIn(comic.id) ? vm.favorite_list.push(comic) : ""
+            //vm.favorite_list.push(comic);
             giveMeComics();
          }
          function isIn(id) {
             let aux_list = vm.favorite_list.find(comic => {return comic.id==id}) || false;
             return aux_list != false;
+         }
+
+        function removeFromFavorite(id) {
+            if(isIn(id)) {
+                let index = vm.favorite_list.findIndex(comic => {return comic.id == id});
+                vm.favorite_list.splice(index, 1);
+            }
          }
     }
 })();

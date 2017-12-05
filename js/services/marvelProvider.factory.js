@@ -30,8 +30,6 @@
             url = buildURL(input, limit, offset)
 
             return $http.get(url).then(res => {
-                console.log(res);
-                console.log(url);
                 let comics = res.data.data.results;
 
                 let aux_comics = [];
