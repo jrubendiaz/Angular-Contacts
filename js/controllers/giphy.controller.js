@@ -24,7 +24,7 @@
         ////////////////
 
         function activate() {
-
+            giveMeGifts();
          }
          function giveMeGifts() {
             GiphyProvider.giveMeGifts(vm.input, vm.offset).then(res => {

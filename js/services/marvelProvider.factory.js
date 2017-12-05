@@ -21,12 +21,12 @@
 
         function buildURL(input, limit, offset) {
             url = base_url;
-            let arr = "&titleStartsWith="+input+"&limit=8&offset="+offset;
+            let arr = "&titleStartsWith="+input+"&limit="+limit+"&offset="+offset;
             return url+arr;
          }
 
         function giveMeComics(input, offset) {
-            let limit = 8;
+            let limit = 3;
             url = buildURL(input, limit, offset)
 
             return $http.get(url).then(res => {

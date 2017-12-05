@@ -11,13 +11,15 @@
 
         //Variables
         vm.offset = 0;
-        vm.limit = 8;
         vm.input = "spider";
+        vm.favorite_list = [];
 
         //Functions
         vm.giveMeComics = giveMeComics;
         vm.nextOffset = nextOffset;
         vm.prevOffset = prevOffset;
+        vm.addToFavorite = addToFavorite;
+        vm.isIn = isIn;
 
         activate();
 
@@ -27,10 +29,8 @@
             giveMeComics();
          }
          function giveMeComics() {
-             console.log(vm.input, vm.offset);
             MarvelProvider.giveMeComics(vm.input, vm.offset).then(res => {
                 vm.list = res;
-                console.log(vm.list);
             })
          }
          function nextOffset() {
@@ -40,6 +40,14 @@
          function prevOffset() {
              vm.offset = vm.offset-8;
              giveMeComics();
+         }
+         function addToFavorite(comic) {
+            vm.favorite_list.push(comic);
+            giveMeComics();
+         }
+         function isIn(id) {
+            let aux_list = vm.favorite_list.find(comic => {return comic.id==id}) || false;
+            return aux_list != false;
          }
     }
 })();
