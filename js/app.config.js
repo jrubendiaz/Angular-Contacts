@@ -16,7 +16,12 @@
                     controller: 'GiphyController',
                     templateUrl: 'js/views/giphyList.html',
                     controllerAs: 'giphyCtrl'
-                } )
+                })
+                .when("/marvel", {
+                    controller: 'MarvelController',
+                    templateUrl: 'js/views/marvelList.html',
+                    controllerAs: 'marvelCtrl'
+                })
         }
 
     })();

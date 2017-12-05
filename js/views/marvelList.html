@@ -1,0 +1,10 @@
+<input type="text" ng-model="marvelCtrl.input" ng-change="marvelCtrl.giveMeComics()">
+<button ng-click="marvelCtrl.giveMeComics()">Traer Comics</button>
+<button ng-click="marvelCtrl.nextOffset()">Next</button>
+<button ng-if="marvelCtrl.offset > 7" ng-click="marvelCtrl.prevOffset()">Prev</button>
+
+<div class="gif-container flex">
+    <div class="gif-item" ng-repeat="comic in marvelCtrl.list">
+        <img src="{{comic.photo}}" alt="">
+    </div>
+</div>
