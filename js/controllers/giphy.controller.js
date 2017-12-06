@@ -14,6 +14,7 @@
         vm.input = "cat";
         vm.offset = 0;
         vm.favorite_list = [];
+        vm.limit = 8;
 
         //Functions
         vm.giveMeGifts = giveMeGifts;

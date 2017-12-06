@@ -35,7 +35,9 @@
         vm.$onInit = function() {
             console.log(vm);
         };
-        vm.$onChanges = function(changesObj) { };
+        vm.$onChanges = function(changesObj) {
+            console.log(changesObj);
+        };
         vm.$onDestroy = function() { };
 
         function isIn(id) {
@@ -54,6 +56,5 @@
             vm.offset >= vm.limit ? vm.offset -= vm.limit : ""
             vm.giveMeNext();
         }
-
     }
 })();

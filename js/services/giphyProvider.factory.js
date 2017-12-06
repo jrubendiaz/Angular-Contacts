@@ -19,8 +19,17 @@
         function giveMeGifts(input, offset) {
             let limit = 8;
             let url = buildURL(input, limit, offset);
+            let aux_gif = {};
+            let aux_list = [];
             return $http.get(url).then(res => {
-                return res.data.data;
+                res.data.data.forEach(gif => {
+                    aux_gif = {
+                        photo: gif.images.fixed_width.url,
+                        ...gif
+                    }
+                    aux_list.push(aux_gif);
+                })
+                return aux_list;
             })
 
          }
