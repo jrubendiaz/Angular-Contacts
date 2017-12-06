@@ -19,9 +19,7 @@
         function giveMeGifts(input, offset) {
             let limit = 8;
             let url = buildURL(input, limit, offset);
-            console.log(url);
             return $http.get(url).then(res => {
-                console.log(res.data);
                 return res.data.data;
             })
 

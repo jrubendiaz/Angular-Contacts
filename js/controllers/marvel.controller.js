@@ -10,6 +10,7 @@
         var vm = this;
 
         //Variables
+        vm.list = [];
         vm.offset = 0;
         vm.input = "spider";
         vm.favorite_list = [];
@@ -45,6 +46,7 @@
          function addToFavorite(comic) {
             !isIn(comic.id) ? vm.favorite_list.push(comic) : ""
             //vm.favorite_list.push(comic);
+            console.log(vm.favorite_list);
             giveMeComics();
          }
          function isIn(id) {

@@ -12,13 +12,4 @@
     <div class="arrow flex center" ng-click="marvelCtrl.nextOffset()"> <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </div>
 </div>
-
-
-<div class="comic-container flex column center favorite-list">
-    <h1>Favoritos</h1>
-    <div class="comic-item-container flex center">
-        <div ng-click="marvelCtrl.removeFromFavorite(comic.id)" class="comic-item center" ng-repeat="comic in marvelCtrl.favorite_list">
-            <img src="{{comic.photo}}" alt="">
-        </div>
-    </div>
-</div>
+<favorite-list list="marvelCtrl.favorite_list"></favorite-list>

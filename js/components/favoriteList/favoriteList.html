@@ -1,0 +1,6 @@
+<h1>Favoritos</h1>
+<div class="comic-item-container flex center">
+    <div ng-click="vm.removeFromList(fav.id)" class="comic-item center" ng-repeat="fav in vm.list">
+        <img src="{{fav.photo}}" alt="">
+    </div>
+</div>
