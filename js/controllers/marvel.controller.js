@@ -13,6 +13,7 @@
         vm.list = [];
         vm.offset = 0;
         vm.input = "spider";
+        vm.limit = 3;
         vm.favorite_list = [];
 
         //Functions
@@ -31,6 +32,7 @@
             giveMeComics();
          }
          function giveMeComics() {
+             console.log(vm);
             MarvelProvider.giveMeComics(vm.input, vm.offset).then(res => {
                 vm.list = res;
             })

@@ -1,15 +1,5 @@
 <input type="text" ng-model="marvelCtrl.input" ng-change="marvelCtrl.giveMeComics()">
 <button ng-click="marvelCtrl.giveMeComics()">Traer Comics</button>
 
-<div class="slider-container flex center">
-    <div class="arrow flex center" ng-click="marvelCtrl.prevOffset()"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
-    </div>
-    <div class="comic-container flex space-a">
-        <div ng-click="marvelCtrl.addToFavorite(comic)" ng-class="{favorite: marvelCtrl.isIn(comic.id)}" class="comic-item" ng-repeat="comic in marvelCtrl.list">
-            <img src="{{comic.photo}}" alt="">
-        </div>
-    </div>
-    <div class="arrow flex center" ng-click="marvelCtrl.nextOffset()"> <i class="fa fa-arrow-right" aria-hidden="true"></i>
-    </div>
-</div>
+<image-slider list="marvelCtrl.list" favorite-list="marvelCtrl.favorite_list" offset="marvelCtrl.offset" limit="marvelCtrl.limit" give-me-next="marvelCtrl.giveMeComics()"></image-slider>
 <favorite-list list="marvelCtrl.favorite_list"></favorite-list>

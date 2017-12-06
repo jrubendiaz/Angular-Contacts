@@ -1,0 +1,11 @@
+<div class="slider-container flex center">
+    <div class="arrow flex center" ng-click="vm.prevOffset()"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="comic-container flex space-a">
+        <div ng-click="vm.addToFavorite(image)" ng-class="{favorite: vm.isIn(image.id)}" class="comic-item" ng-repeat="image in vm.list">
+            <img src="{{image.photo}}" alt="">
+        </div>
+    </div>
+    <div class="arrow flex center" ng-click="vm.nextOffset()"> <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </div>
+</div>
