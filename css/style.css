@@ -8,6 +8,9 @@ body {
 header {
     min-height: 15vh;
 }
+a {
+    text-decoration: none;
+}
 nav {
     width: 100%;
     padding: 18px 0px;
@@ -42,6 +45,9 @@ h1 {
 .end {
     align-self: flex-end;
 }
+.start {
+    justify-content: flex-start;
+}
 main {
     box-sizing: border-box;
 }
@@ -51,6 +57,11 @@ section {
 }
 aside {
     width: 40%;
+}
+small {
+    padding: 8px 12px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
 }
 .contacts-list {
     display: flex;
@@ -68,13 +79,12 @@ aside {
     box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
     border-radius: 3px;
     margin-bottom: 8px;
-    background-color: rgba(222,222,222, 0.4);
     overflow: hidden;
 }
 .contact-item-image img {
     max-width: 100%;
     width: 100%;
-    border-bottom: 4px solid rgba(222,222,222, 0.6);
+    border-bottom: 4px solid #00FE89;
 }
 .contact-item-info {
     padding: 12px 24px;
@@ -116,7 +126,7 @@ aside {
     outline: none;
 }
 .form-group {
-    height: 75vh;
+    height: 75vh;77
     padding: 24px 16px;
     background-color: rgba(100,100,100, 0.1);
     border-radius: 2px;
@@ -308,8 +318,47 @@ aside {
 
 /* STYLES FOR ADD NEW USER */
 .add-new-user-container {
-    background-color: rgba(22,22,22, 0.1);
+    border-top: 4px solid #00FE89;
     padding: 75px 0px;
-    border-radius: 3px;
+    border-radius: 0px 0px 3px 3px;
     box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+/* STYLES FOR CONTACT PROFILE */
+header {
+    background-color: #38003c;
+    color: #dddddd;
+    box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    border-bottom: 4px solid #e90052;
+}
+.btn-header {
+    background-color: #e90052;
+    font-weight: 800;
+}
+/* Colors */
+.purple {
+    color: #38003c;
+}
+.bg-purple {
+    background-color: #38003c;
+    color: #ffffff;
+    border-color: #e90052;
+}
+.white {
+    color: rgba(240,240,240, 1);
+}
+.bg-white {
+    background-color: #ffffff;
+}
+.pink {
+    color: #e90052;
+}
+.bg-pink {
+    background-color: #e90052;
+}
+.green {
+    color: #00FE89;
+}
+.bg-green {
+    background-color: #00FE89;
 }

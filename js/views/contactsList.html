@@ -1,7 +1,7 @@
 <main class="flex center space-a">
     <section class="contacts-list flex space-b">
         <div class="contact-item flex column center" ng-repeat="contact in contactsCtrl.contacts">
-            <div class="contact-item-cont flex center column">
+            <div class="contact-item-cont flex center column bg-purple">
                 <div class="contact-item-image">
                     <img src="{{contact.photo}}" alt="Imagen de perfil de {{contact.name}}">
                 </div>
@@ -10,16 +10,17 @@
                 </div>
             </div>
             <div class="contact-item-actions flex center">
-                    <button class="btn btn-circle btn-update"><i class="fa fa-pencil" aria-hidden="true"></i>
-                    </button>
+                    <a href="#!/contact/{{contact.id || 0}}"><button class="btn btn-circle bg-green purple"><i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button></a>
             </div>
         </div>
     </section>
 
     <aside class="flex column space-b">
-        <div ng-if="contactsCtrl.edit == 'init'" class="flex center add-new-user-container">
-            <button ng-click="contactsCtrl.edit='personal'" class="btn btn-circle btn-update">+</button>
-            <small>Añadir nuevo usuario</small>
+        <div ng-if="contactsCtrl.edit == 'init'" class="flex center add-new-user-container bg-purple">
+            <button ng-click="contactsCtrl.edit='personal'" class="btn btn-circle bg-pink white"><i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <small class="bg-pink white"><stron>Añadir nuevo usuario</stron></small>
         </div>
         <div ng-if="contactsCtrl.edit != 'init'"  class="edit-container">
             <div class="edit-selector">

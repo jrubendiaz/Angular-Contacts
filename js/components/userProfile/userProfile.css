@@ -1,0 +1,26 @@
+.profile-container {
+    min-height: 100vh;
+}
+.profile-header {
+    padding: 12px 0px;
+}
+.profile-photo {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+.profile-info label {
+    padding: 12px 16px;
+    border-radius: 1px;
+    border-bottom: 4px solid #00FE89;
+    font-size: 1.5em;
+}
+.profile-info-iconic small {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 500ms cubic-bezier(0.825, -0.570, 0.155, 1.650);
+}
+.profile-info-iconic:hover small {
+    opacity: 1;
+    transform: scale(1);
+}

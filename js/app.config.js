@@ -22,6 +22,11 @@
                     templateUrl: 'js/views/marvelList.html',
                     controllerAs: 'marvelCtrl'
                 })
+                .when("/contact/:id", {
+                    controller: 'ContactProfileController',
+                    templateUrl: 'js/views/contactProfile.html',
+                    controllerAs: 'contactProfileCtrl'
+                })
         }
 
     })();

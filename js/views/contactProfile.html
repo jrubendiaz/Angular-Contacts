@@ -1,0 +1,23 @@
+<header class="flex center start">
+    <div class="go-back">
+        <a href="#!/">
+            <button class="btn btn-header btn-circle white"> <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <small class="bg-pink white"><strong>Volver a contactos</strong></small>
+        </a>
+    </div>
+</header>
+<main class="flex">
+    <section>
+        <user-profile user="contactProfileCtrl.user"></user-profile>
+    </section>
+    <aside>
+        <div class="favorite-selector">
+            <button class="btn">GIFS</button>
+            <button class="btn">COMICS</button>
+        </div>
+        <favorite-list
+            list="contactProfileCtrl.list">
+        </favorite-list>
+    </aside>
+</main>

@@ -1,0 +1,25 @@
+<div class="profile-container flex column center bg-purple">
+    <div class="profile-header">
+        <img src="{{vm.user.photo}}" alt="" class="profile-photo">
+    </div>
+    <div class="profile-info flex column center">
+        <label class="green">
+            <strong>Datos personales</strong>
+        </label>
+        <p class="profile-info-name">{{vm.user.name}}</p>
+        <div class="profile-info-iconic-container flex space-b">
+            <div class="profile-info-iconic flex column center">
+                <button class="btn btn-circle bg-pink flex center">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </button>
+                <small class="bg-pink">{{vm.user.email}}</small>
+            </div>
+            <div class="profile-info-iconic flex column center">
+                <button class="btn btn-circle bg-pink flex center">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </button>
+                <small class="bg-pink">{{vm.user.phone}}</small>
+            </div>
+        </div>
+    </div>
+</div>
