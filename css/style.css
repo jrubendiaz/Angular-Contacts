@@ -62,14 +62,14 @@ aside {
     display: flex;
     width: 45%;
     flex-direction: column;
-    justify-content: space-between;
     margin: 1%;
 }
 .contact-item-cont {
     box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
-    border-radius: 2px;
+    border-radius: 3px;
     margin-bottom: 8px;
     background-color: rgba(222,222,222, 0.4);
+    overflow: hidden;
 }
 .contact-item-image img {
     max-width: 100%;
@@ -304,4 +304,12 @@ aside {
 }
 .favorite-list .comic-item img {
     max-height: 180px;
+}
+
+/* STYLES FOR ADD NEW USER */
+.add-new-user-container {
+    background-color: rgba(22,22,22, 0.1);
+    padding: 75px 0px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
 }
