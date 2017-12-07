@@ -1,0 +1,17 @@
+<image-slider
+    list="vm.list"
+    favorite-list="vm.favoriteList"
+    offset="vm.offset"
+    limit="vm.limit"
+    give-me-next="vm.giveMeComics()">
+</image-slider>
+
+<input
+    type="text"
+    placeholder="Introduce un personaje"
+    ng-model="vm.input"
+    ng-change="vm.inputHandler()"/>
+
+<favorite-list
+    list="vm.favoriteList">
+</favorite-list>

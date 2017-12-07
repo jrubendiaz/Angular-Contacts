@@ -1,14 +1,4 @@
-<input type="text" ng-model="marvelCtrl.input" ng-change="marvelCtrl.giveMeComics()">
-<button ng-click="marvelCtrl.giveMeComics()">Traer Comics</button>
+<marvel-manager
+    favorite-list="[]">
 
-<image-slider
-    list="marvelCtrl.list"
-    favorite-list="marvelCtrl.favorite_list"
-    offset="marvelCtrl.offset"
-    limit="marvelCtrl.limit"
-    give-me-next="marvelCtrl.giveMeComics()">
-</image-slider>
-
-<favorite-list
-    list="marvelCtrl.favorite_list">
-</favorite-list>
+</marvel-manager>
