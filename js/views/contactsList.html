@@ -14,33 +14,13 @@
         <div class="edit-selector">
             <button ng-click="contactsCtrl.edit='personal'">Info</button>
             <button ng-click="contactsCtrl.edit='comics'">Comics</button>
-            <button ng-click="contactsCtrl.edit='gifs'">Gifs</button>
+            <button ng-click="contactsCtrl.edit='giphy'">Gifs</button>
         </div>
         <div ng-if="contactsCtrl.edit=='comics'">
-            <input type="text" ng-model="input" ng-change="contactsCtrl.giveMeComics()">
-            <button ng-click="giveMeComics()">Traer Comics</button>
-
-            <div class="slider-container flex center">
-                <div class="arrow flex center" ng-click="prevOffset()"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </div>
-                <div class="comic-container flex space-a">
-                    <div ng-click="addToFavorite(comic)" ng-class="{favorite: isIn(comic.id)}" class="comic-item" ng-repeat="comic in contactsCtrl.list_comics">
-                        <img src="{{comic.photo}}" alt="">
-                    </div>
-                </div>
-                <div class="arrow flex center" ng-click="nextOffset()"> <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </div>
-            </div>
-
-
-            <div class="comic-container flex column center favorite-list">
-                <h1>Favoritos</h1>
-                <div class="comic-item-container flex center">
-                    <div ng-click="removeFromFavorite(comic.id)" class="comic-item center" ng-repeat="comic in favorite_list">
-                        <img src="{{comic.photo}}" alt="">
-                    </div>
-                </div>
-            </div>
+            <marvel-manager favorite-list="[]"></marvel-manager>
+        </div>
+        <div ng-if="contactsCtrl.edit=='giphy'">
+            <giphy-manager favorite-list="[]"></giphy-manager>
         </div>
         <form ng-if="contactsCtrl.edit=='personal'" class="form-group flex column space-b">
             <div class="input-group-iconic flex column center">

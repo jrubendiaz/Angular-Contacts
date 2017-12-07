@@ -37,7 +37,6 @@
         }
 
         function removeFromList(id) {
-            console.log(id);
             if(isIn(id)) {
                 let index = vm.list.findIndex(fav => {return fav.id == id});
                 vm.list.splice(index, 1);

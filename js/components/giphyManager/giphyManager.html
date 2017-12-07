@@ -9,14 +9,19 @@
     favorite-list="vm.favoriteList"
     offset="vm.offset"
     limit="vm.limit"
-    give-me-next="vm.giveMeComics()">
+    give-me-next="vm.giveMeGifs()">
 </image-slider>
 
 <input
     type="text"
     placeholder="Gifs about whaaaat?"
-    ng-model="vm.input"
-    ng-change="vm.inputHandler()"/>
+    ng-model="vm.input"/>
+<button
+    ng-click="vm.giveMeGifs()">Buscar</button>
+<button
+    ng-click="vm.orderByTrending()">Trending</button>
+<button
+    ng-click="vm.orderByNewest()">Newest</button>
 
 <favorite-list
     list="vm.favoriteList">

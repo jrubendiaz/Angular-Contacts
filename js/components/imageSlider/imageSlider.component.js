@@ -33,10 +33,8 @@
         ////////////////
 
         vm.$onInit = function() {
-            console.log(vm);
         };
         vm.$onChanges = function(changesObj) {
-            console.log(changesObj);
         };
         vm.$onDestroy = function() { };
 
@@ -45,7 +43,6 @@
             return aux_list != false;
         }
         function addToFavorite(image) {
-            console.log(image);
             !isIn(image.id) ? vm.favoriteList.push(image) : ""
         }
         function nextOffset() {
