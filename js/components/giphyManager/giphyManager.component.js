@@ -8,17 +8,17 @@
 
     angular
         .module('AngularContacts')
-        .component('marvelManager', {
-            templateUrl: '/js/components/marvelManager/marvelManager.html',
-            controller: MarvelManagerController,
+        .component('giphyManager', {
+            templateUrl: '/js/components/giphyManager/giphyManager.html',
+            controller: GiphyManagerController,
             controllerAs: 'vm',
             bindings: {
                 favoriteList: '=',
             },
         });
 
-    MarvelManagerController.$inject = ['MarvelProvider'];
-    function MarvelManagerController(MarvelProvider) {
+    GiphyManagerController.$inject = ['GiphyProvider'];
+    function GiphyManagerController(GiphyProvider) {
         var vm = this;
 
         //Variables
@@ -29,26 +29,27 @@
         vm.timeoutID = "";
 
         //Functions
-        vm.giveMeComics = giveMeComics;
+        vm.giveMeGifs = giveMeGifs;
         vm.inputHandler = inputHandler;
+
 
         ////////////////
 
-        vm.$onInit = function() {};
+        vm.$onInit = function() { };
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };
 
         function inputHandler() {
             if(vm.input.length > 2) {
                 window.clearTimeout(vm.timeoutID);
-                vm.timeoutID = window.setTimeout(giveMeComics, 1500);
+                vm.timeoutID = window.setTimeout(giveMeGifs, 1500);
             }
         }
 
-        function giveMeComics() {
-            MarvelProvider.giveMeComics(vm.input, vm.offset)
-                            .then(comics => {
-                                vm.list = comics;
+        function giveMeGifs() {
+            GiphyProvider.giveMeGifs(vm.input, vm.offset)
+                            .then(gifs => {
+                                vm.list = gifs;
                             })
         }
     }

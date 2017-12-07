@@ -1,16 +1,3 @@
-<input type="text" ng-model="giphyCtrl.input" ng-change="giphyCtrl.giveMeGifts()">
-<button ng-click="giphyCtrl.giveMeGifts()">Traer Gifts</button>
-<button ng-click="giphyCtrl.nextOffset()">Next</button>
-<button ng-if="giphyCtrl.offset > 7" ng-click="giphyCtrl.prevOffset()">Prev</button>
-
-<image-slider
-    list="giphyCtrl.list"
-    favorite-list="giphyCtrl.favorite_list"
-    offset="giphyCtrl.offset"
-    limit="giphyCtrl.limit"
-    give-me-next="giphyCtrl.giveMeGifts()">
-</image-slider>
-
-<favorite-list
-    list="giphyCtrl.favorite_list">
-</favorite-list>
+<giphy-manager
+    favorite-list="[]">
+</giphy-manager>

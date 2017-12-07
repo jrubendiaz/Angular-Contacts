@@ -17,7 +17,7 @@
         vm.limit = 8;
 
         //Functions
-        vm.giveMeGifts = giveMeGifts;
+        vm.giveMeGifs = giveMeGifs;
         vm.nextOffset = nextOffset;
         vm.prevOffset = prevOffset;
         vm.addToFavorite = addToFavorite;
@@ -29,24 +29,24 @@
         ////////////////
 
         function activate() {
-            giveMeGifts();
+            giveMeGifs();
          }
-         function giveMeGifts() {
-            GiphyProvider.giveMeGifts(vm.input, vm.offset).then(res => {
+         function giveMeGifs() {
+            GiphyProvider.giveMeGifs(vm.input, vm.offset).then(res => {
                 vm.list = res;
             })
          }
          function nextOffset() {
             vm.offset = vm.offset+8;
-            giveMeGifts();
+            giveMeGifs();
          }
          function prevOffset() {
              vm.offset = vm.offset-8;
-             giveMeGifts();
+             giveMeGifs();
          }
          function addToFavorite(gif) {
             !isIn(gif.id) ? vm.favorite_list.push(gif) : ""
-            giveMeGifts();
+            giveMeGifs();
          }
          function isIn(id) {
             let aux_list = vm.favorite_list.find(gif => {return gif.id==id}) || false;

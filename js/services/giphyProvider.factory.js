@@ -10,13 +10,13 @@
         const key = "Hx6uXJnG4UBlYRiAF1v0TtjwbUnF583L";
         var url = "http://api.giphy.com/v1/gifs/search?";
         var service = {
-            giveMeGifts: giveMeGifts
+            giveMeGifs: giveMeGifs
         };
 
         return service;
 
         ////////////////
-        function giveMeGifts(input, offset) {
+        function giveMeGifs(input, offset) {
             let limit = 8;
             let url = buildURL(input, limit, offset);
             let aux_gif = {};
