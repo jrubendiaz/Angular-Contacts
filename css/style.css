@@ -338,7 +338,6 @@ header {
 .bg-purple {
     background-color: #38003c;
     color: #ffffff;
-    border-color: #e90052;
 }
 .white {
     color: rgba(240,240,240, 1);
@@ -348,12 +347,14 @@ header {
 }
 .pink {
     color: #e90052;
+    border-color: #e90052;
 }
 .bg-pink {
     background-color: #e90052;
 }
 .green {
     color: #00FE89;
+    border-color: #00FE89;
 }
 .bg-green {
     background-color: #00FE89;

@@ -4,13 +4,23 @@
 <main class="flex center space-a">
     <section class="contacts-list flex center">
         <user-list
+            ng-if="contactsCtrl.contacts.length > 0"
             class="flex center"
             users="contactsCtrl.contacts">
         </user-list>
+        <div
+            ng-if="contactsCtrl.contacts.length < 1"
+            class="flex center add-new-user-container bg-purple greem">
+            <button ng-click="contactsCtrl.addTest()" class="btn btn-circle bg-green purple"><i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <small class="bg-green purple"><stron>Añadir usuario test</stron></small>
+        </div>
     </section>
 
     <aside class="flex column space-b">
-        <div ng-if="contactsCtrl.edit == 'init'" class="flex center add-new-user-container bg-purple">
+        <div
+            ng-if="contactsCtrl.edit == 'init'"
+            class="flex center add-new-user-container bg-purple pink">
             <button ng-click="contactsCtrl.edit='personal'" class="btn btn-circle bg-pink white"><i class="fa fa-plus" aria-hidden="true"></i>
             </button>
             <small class="bg-pink white"><stron>Añadir nuevo usuario</stron></small>
