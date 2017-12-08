@@ -17,7 +17,7 @@
         </div>
     </section>
 
-    <aside class="flex column space-b">
+    <aside class="flex column center">
         <div
             ng-if="contactsCtrl.edit == 'init'"
             class="flex center add-new-user-container bg-purple pink">
@@ -27,9 +27,18 @@
         </div>
         <div ng-if="contactsCtrl.edit != 'init'"  class="edit-container">
             <div class="edit-selector flex center">
-                <label ng-click="contactsCtrl.edit='personal'">Info</label>
-                <label ng-click="contactsCtrl.edit='comics'">Comics</label>
-                <label ng-click="contactsCtrl.edit='giphy'">Gifs</label>
+                <label
+                class="highlight"
+                ng-click="contactsCtrl.edit='personal'"
+                ng-class="{active: contactsCtrl.edit=='personal'}">Info</label>
+                <label
+                class="highlight"
+                ng-click="contactsCtrl.edit='comics'"
+                ng-class="{active: contactsCtrl.edit=='comics'}">Comics</label>
+                <label
+                class="highlight"
+                ng-click="contactsCtrl.edit='giphy'"
+                ng-class="{active: contactsCtrl.edit=='giphy'}">Gifs</label>
             </div>
 
             <div ng-if="contactsCtrl.edit=='comics'">
@@ -39,10 +48,13 @@
                 <giphy-manager favorite-list="contactsCtrl.newContact.favoriteList.giphy"></giphy-manager>
             </div>
 
-            <form ng-if="contactsCtrl.edit=='personal'" class="form-group flex column space-b">
-                <div class="input-group-iconic flex column center">
-                    <div class="flex center search-bar">
-                        <i class="fa fa-user-circle" ng-class="{error: !contactsCtrl.newContact.name.$valid && contactsCtrl.newContact.name.$touched && contactsCtrl.newContact.name.$dirty}" aria-hidden="true"></i>
+            <form ng-if="contactsCtrl.edit=='personal'" class="form-group flex center column space-b add-new-user-container pink">
+                <div class="form-header flex center">
+                    <label class="highlight">Datos Personales: </label>
+                </div>
+                <div class="flex column input-group">
+                    <label class="title purple">Nombre de usuario:</label>
+                    <div class="flex center">
                         <input ng-minlength="5" type="text" name="newContact.name" id="newContact.name" ng-model="contactsCtrl.newContact.name" ng-change="" ng-required="true" placeholder="Nombre">
                         <small class="checked" ng-if="contactsCtrl.newContact.name.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
                     </div>
@@ -50,9 +62,9 @@
                         <small class="error-text" ng-if="contactsCtrl.newContact.name.$invalid && contactsCtrl.newContact.name.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
                     </div>
                 </div>
-                <div class="input-group-iconic flex column center">
-                    <div class="flex center search-bar">
-                        <i class="fa fa-user-circle" ng-class="{error: !contactsCtrl.newContact.email.$valid && contactsCtrl.newContact.email.$touched && contactsCtrl.newContact.email.$dirty}" aria-hidden="true"></i>
+                <div class="flex column input-group">
+                    <label class="title purple">Email de contacto:</label>
+                    <div class="flex center">
                         <input ng-minlength="5" type="text" name="newContact.email" id="newContact.email" ng-model="contactsCtrl.newContact.email" ng-change="" ng-required="true" placeholder="Email de contacto">
                         <small class="checked" ng-if="contactsCtrl.newContact.email.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
                     </div>
@@ -60,9 +72,9 @@
                         <small class="error-text" ng-if="contactsCtrl.newContact.email.$invalid && contactsCtrl.newContact.email.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
                     </div>
                 </div>
-                <div class="input-group-iconic flex column center">
-                    <div class="flex center search-bar">
-                        <i class="fa fa-user-circle" ng-class="{error: !contactsCtrl.newContact.phone.$valid && contactsCtrl.newContact.phone.$touched && contactsCtrl.newContact.phone.$dirty}" aria-hidden="true"></i>
+                <div class="flex column input-group">
+                        <label class="title purple">Teléfono de contacto:</label>
+                        <div class="flex center">
                         <input ng-minlength="5" type="number" name="newContact.phone" id="newContact.phone" ng-model="contactsCtrl.newContact.phone" ng-change="" ng-required="true" placeholder="Número de teléfono">
                         <small class="checked" ng-if="contactsCtrl.newContact.phone.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
                     </div>
@@ -70,9 +82,9 @@
                         <small class="error-text" ng-if="contactsCtrl.newContact.phone.$invalid && contactsCtrl.newContact.phone.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
                     </div>
                 </div>
-                <div class="input-group-iconic flex column center">
-                    <div class="flex center search-bar">
-                        <i class="fa fa-user-circle" ng-class="{error: !contactsCtrl.newContact.photo.$valid && contactsCtrl.newContact.photo.$touched && contactsCtrl.newContact.photo.$dirty}" aria-hidden="true"></i>
+                <div class="flex column input-group">
+                        <label class="title purple">Imagen de perfil (URL):</label>
+                    <div class="flex center">
                         <input ng-minlength="5" type="text" name="newContact.photo" id="newContact.photo" ng-model="contactsCtrl.newContact.photo" ng-change="" ng-required="true" placeholder="URL - Imagen de perfil">
                         <small class="checked" ng-if="contactsCtrl.newContact.photo.$valid"><i class="fa fa-check" aria-hidden="true"></i></small>
                     </div>
@@ -80,7 +92,18 @@
                         <small class="error-text" ng-if="contactsCtrl.newContact.photo.$invalid && contactsCtrl.newContact.photo.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
                     </div>
                 </div>
-                <button ng-click="contactsCtrl.addContact()">Añadir</button>
+                <button class="btn bg-pink white new-user-submit" ng-click="contactsCtrl.addContact()">Añadir</button>
+                <div class="separator flex center">
+                    <hr><span class="pink">Or create with</span><hr>
+                </div>
+                <div class="social-icons flex center">
+                    <button class="btn btn-circle bg-facebook white"><i class="fa fa-facebook" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-circle bg-googleplus white"><i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-circle bg-github white"><i class="fa fa-github-alt" aria-hidden="true"></i>
+                    </button>
+                </div>
             </form>
         </div>
     </aside>
