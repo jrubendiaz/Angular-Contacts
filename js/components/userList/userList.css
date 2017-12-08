@@ -1,0 +1,20 @@
+.contact-item {
+    display: flex;
+    width: 21%;
+    flex-direction: column;
+    margin: 2%;
+}
+.contact-item-cont {
+    box-shadow: 0 1px 3px 0 rgba(222,222,222,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    border-radius: 3px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.contact-item-image img {
+    max-width: 100%;
+    width: 100%;
+    border-bottom: 4px solid #00FE89;
+}
+.contact-item-info {
+    padding: 12px 24px;
+}
