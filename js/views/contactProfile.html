@@ -1,4 +1,4 @@
-<header class="flex center start">
+<header class="user-profile-header flex center start">
     <div class="go-back">
         <a href="#!/">
             <button class="btn btn-header btn-circle white"> <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -7,14 +7,16 @@
         </a>
     </div>
 </header>
-<main class="flex">
-    <section>
-        <user-profile user="contactProfileCtrl.user"></user-profile>
+<main class="flex center">
+    <section class="user-profile-section bg-pink">
+        <user-profile
+            user="contactProfileCtrl.user">
+        </user-profile>
     </section>
-    <aside>
-        <div class="favorite-selector">
-            <button class="btn">GIFS</button>
-            <button class="btn">COMICS</button>
+    <aside class="favorite-selector-section bg-green">
+        <div class="favorite-selector flex center">
+            <button ng-click="contactProfileCtrl.giveMeGifs()" class="btn bg-purple">GIFS</button>
+            <button ng-click="contactProfileCtrl.giveMeComics()" class="btn bg-purple">COMICS</button>
         </div>
         <favorite-list
             list="contactProfileCtrl.list">

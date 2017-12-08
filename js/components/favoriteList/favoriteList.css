@@ -1,0 +1,7 @@
+.favorite-list-header label {
+    padding: 12px 16px;
+    border-radius: 1px;
+    border-bottom: 4px solid #38003c;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}

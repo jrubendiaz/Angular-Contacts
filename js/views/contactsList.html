@@ -1,5 +1,8 @@
+<header>
+
+</header>
 <main class="flex center space-a">
-    <section class="contacts-list flex space-b">
+    <section class="contacts-list flex center">
         <div class="contact-item flex column center" ng-repeat="contact in contactsCtrl.contacts">
             <div class="contact-item-cont flex center column bg-purple">
                 <div class="contact-item-image">
@@ -23,10 +26,10 @@
             <small class="bg-pink white"><stron>Añadir nuevo usuario</stron></small>
         </div>
         <div ng-if="contactsCtrl.edit != 'init'"  class="edit-container">
-            <div class="edit-selector">
-                <button ng-click="contactsCtrl.edit='personal'">Info</button>
-                <button ng-click="contactsCtrl.edit='comics'">Comics</button>
-                <button ng-click="contactsCtrl.edit='giphy'">Gifs</button>
+            <div class="edit-selector flex center">
+                <label ng-click="contactsCtrl.edit='personal'">Info</label>
+                <label ng-click="contactsCtrl.edit='comics'">Comics</label>
+                <label ng-click="contactsCtrl.edit='giphy'">Gifs</label>
             </div>
 
             <div ng-if="contactsCtrl.edit=='comics'">
