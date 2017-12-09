@@ -33,7 +33,6 @@
         function activate() {
             //load users/contacts from ContactProvider (localStore)
             vm.contacts = ContactProvider.getAll();
-            console.log(vm.contacts);
         }
         function resetNewContact() {
             vm.newContact = {

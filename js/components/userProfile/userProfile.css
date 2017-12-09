@@ -1,5 +1,5 @@
 section.user-profile-section, aside.favorite-selector-section {
-    height: 85vh;
+    min-height: 85vh;
     box-sizing: border-box;
     padding-top: 25px;
 }

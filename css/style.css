@@ -15,6 +15,9 @@ header {
     min-height: 15vh;
     box-sizing: border-box;
 }
+header button.btn-circle {
+    font-size: 2em;
+}
 a {
     text-decoration: none;
 }

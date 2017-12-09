@@ -1,12 +1,13 @@
-<header>
-
+<header class="flex center">
+    <button class="btn btn-circle bg-pink"><i class="fab fa-angular"></i></button>
 </header>
 <main class="flex center space-a">
     <section class="contacts-list flex center">
         <user-list
             ng-if="contactsCtrl.contacts.length > 0"
             class="flex center"
-            users="contactsCtrl.contacts">
+            users="contactsCtrl.contacts"
+            ng-cloak>
         </user-list>
         <div
             ng-if="contactsCtrl.contacts.length < 1"
@@ -97,11 +98,11 @@
                     <hr><span class="pink">Or create with</span><hr>
                 </div>
                 <div class="social-icons flex center">
-                    <button class="btn btn-circle bg-facebook white"><i class="fa fa-facebook" aria-hidden="true"></i>
+                    <button class="btn btn-circle bg-facebook white"><i class="fab fa-facebook-f"></i>
                     </button>
-                    <button class="btn btn-circle bg-googleplus white"><i class="fa fa-google-plus" aria-hidden="true"></i>
+                    <button class="btn btn-circle bg-googleplus white"><i class="fab fa-google-plus-g" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-circle bg-github white"><i class="fa fa-github-alt" aria-hidden="true"></i>
+                    <button class="btn btn-circle bg-github white"><i class="fab fa-github" aria-hidden="true"></i>
                     </button>
                 </div>
             </form>
