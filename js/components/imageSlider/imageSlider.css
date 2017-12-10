@@ -1,0 +1,38 @@
+.slider-container {
+    margin: 0 auto;
+}
+.arrow {
+    flex: 1;
+    font-size: 3em;
+    cursor: pointer;
+}
+.arrow:hover {
+    background-color: black;
+    color: white;
+}
+.images-container {
+    flex-wrap: wrap;
+    flex: 10;
+}
+    .image-item {
+        width: 31.3%;
+        transition: all 500ms cubic-bezier(0.825, -0.570, 0.155, 1.650);
+        margin: 1%;
+    }
+    .image-item-header {
+        border-radius: 3px 3px 0px 0px;
+        padding: 6px 8px;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        border-bottom: 4px solid;
+    }
+    .image-item-header small {
+        font-weight: 200;
+    }
+    .image-item.favorite {
+        opacity: 0.8;
+        transform: scale(0.8);
+    }
+        .image-item img {
+            max-width: 100%;
+        }

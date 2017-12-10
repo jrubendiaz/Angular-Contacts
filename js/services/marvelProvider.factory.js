@@ -36,8 +36,10 @@
                 let aux_comic = {};
 
                 comics.forEach(comic => {
+                    let aux_title = comic.title.split(" ");
                     aux_comic = {
                         photo: comic.images[0].path+"."+comic.images[0].extension,
+                        displayTitle: aux_title[0],
                         ...comic
                     }
                     aux_comics.push(aux_comic);

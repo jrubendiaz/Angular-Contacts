@@ -48,6 +48,7 @@
         function nextOffset() {
             vm.offset += vm.limit;
             vm.giveMeNext();
+            console.log(vm.list);
         }
         function prevOffset() {
             vm.offset >= vm.limit ? vm.offset -= vm.limit : ""

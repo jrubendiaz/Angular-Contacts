@@ -27,14 +27,18 @@
         vm.input = "";
         vm.limit = 3;
         vm.timeoutID = "";
+        vm.placeholders = [];
 
         //Functions
         vm.giveMeComics = giveMeComics;
         vm.inputHandler = inputHandler;
+        vm.buildPlaceholders = buildPlaceholders;
 
         ////////////////
 
-        vm.$onInit = function() {};
+        vm.$onInit = function() {
+            vm.buildPlaceholders();
+        };
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };
 
@@ -44,7 +48,11 @@
                 vm.timeoutID = window.setTimeout(giveMeComics, 1500);
             }
         }
-
+        function buildPlaceholders() {
+            for(var i = 0; i < vm.limit; i++) {
+                vm.placeholders.push("a");
+            }
+        }
         function giveMeComics() {
             MarvelProvider.giveMeComics(vm.input, vm.offset)
                             .then(comics => {
