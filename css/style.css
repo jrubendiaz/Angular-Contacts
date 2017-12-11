@@ -309,6 +309,15 @@ header {
 }
 
 /* Colors */
+.bg-soft {
+    background-color: rgba(100,100,100, 0.1);
+}
+.soft {
+    color: rgba(100,100,100, 0.1);
+}
+.light-soft {
+    color: rgba(244,244,244, 0.5);
+}
 .purple {
     color: #38003c;
 }

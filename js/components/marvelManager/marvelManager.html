@@ -12,7 +12,7 @@
     limit="vm.limit"
     give-me-next="vm.giveMeComics()">
 </image-slider>
-<div class="comics-placeholders" ng-if="vm.list < 1">
+<div class="comics-placeholders" ng-if="vm.list.length < 1">
     <div class="comic-placeholder flex">
         <div
         class="placeholder bg-purple pink"
@@ -20,9 +20,9 @@
         </div>
     </div>
 </div>
-<form class="flex marvel-search-form form-group">
+<form class="flex column marvel-search-form form-group">
     <div class="flex column input-group">
-        <label class="title purple">Buscar por título:</label>
+        <label class="title pink">Buscar por título:</label>
         <div class="flex center">
             <input
             type="text"
@@ -34,6 +34,13 @@
         <div class="flex">
             <small class="error-text" ng-if="contactsCtrl.newContact.email.$invalid && contactsCtrl.newContact.email.$touched">Tu nombre de usuario debe contener al menos 10 carateres</small>
         </div>
+    </div>
+    <div class="characters-container flex center">
+        <label class="title pink"> Personajes aleatorios: </label>
+        <small
+        class="bg-pink light-soft"
+        ng-click="vm.giveMeComics_byChar(char.id)"
+        ng-repeat="char in vm.randomChars track by $index">{{char.name}}</small>
     </div>
 </form>
 <favorite-list
