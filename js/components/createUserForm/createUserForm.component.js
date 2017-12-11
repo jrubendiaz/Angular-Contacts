@@ -30,19 +30,25 @@
         //Functions
         vm.createUser = createUser;
 
-
-
         ////////////////
 
-        vm.$onInit = function() {
-            console.log(vm.user);
-        };
+        vm.$onInit = function() { };
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };
 
         function createUser() {
-            firebaseProvider.newUser(vm.aux_user.email, vm.aux_user.pass);
-            vm.user = vm.aux_user;
+            let newUser = addAuth().then(res => {
+                firebaseProvider.newUserToDatabase(res);
+                vm.user = res;
+            })
+        }
+        function addAuth() {
+            return firebaseProvider.newUser(vm.aux_user.email, vm.aux_user.pass).then(res => {
+                let aux_user = {};
+                aux_user.uid = res.uid;
+                aux_user.email = res.email;
+                return aux_user;
+            });
         }
     }
 })();

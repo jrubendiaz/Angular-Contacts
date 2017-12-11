@@ -11,6 +11,7 @@
             getAll: getAll,
             newUser: newUser,
             logout: logout,
+            newUserToDatabase: newUserToDatabase,
         };
 
         return service;
@@ -22,7 +23,9 @@
             return $firebaseArray(ref);
         }
         function newUser(email, password) {
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            return firebase.auth().createUserWithEmailAndPassword(email, password).then(res => {
+                return res;
+            }).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -30,6 +33,19 @@
                 // ...
               });
         }
+        function newUserToDatabase(user) {
+            let ref = firebase.database().ref().child('users/' + user.uid);
+            let current_user = $firebaseObject(ref);
+
+            current_user.email = user.email;
+            current_user.uid = user.uid;
+            current_user.$save().then(function(ref) {
+              ref.key === current_user.$id; // true
+            }, function(error) {
+              console.log("Error:", error);
+            });
+        }
+
         function logout() {
             return firebase.auth().signOut().then(function() {
                 return true;
