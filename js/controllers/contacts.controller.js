@@ -11,6 +11,7 @@
 
         // Own Variables
         vm.contacts = [];
+        vm.user = {};
         vm.edit = 'init';
         vm.newContact = {
             name: "", // update by name input
@@ -33,12 +34,24 @@
         function activate() {
             vm.contacts = firebaseProvider.getAll();
             // Testing create user in firebase
-            firebaseProvider.newUser("Pepe@correo.es", "45jjaleatorio");
+            //firebaseProvider.newUser("Pepe@correo.es", "45jjaleatorio");
 
             /*
             load users/contacts from ContactProvider (localStore)
             vm.contacts = ContactProvider.getAll();
             */
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                  console.log(user)
+                  // User is signed in.
+                  vm.user.email = user.email;
+                  vm.user.uid = user.uid;
+                  // ...
+                } else {
+                  // User is signed out.
+                  // ...
+                }
+              });
         }
         function resetNewContact() {
             vm.newContact = {

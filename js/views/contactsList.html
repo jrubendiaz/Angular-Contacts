@@ -1,7 +1,14 @@
 <header class="flex center">
     <button class="btn btn-circle bg-pink"><i class="fab fa-angular"></i></button>
+    <small class="bg-pink">{{contactsCtrl.user.email}}</small>
+    <button class="btn btn-circle bg-pink"><i class="fas fa-sign-out-alt"></i></button>
 </header>
-<main class="flex center space-a">
+<main ng-if="!contactsCtrl.user.email" class="flex center">
+    <create-user-form user="contactsCtrl.user">
+
+    </create-user-form>
+</main>
+<main ng-if="contactsCtrl.user.email" class="flex center space-a">
     <section class="contacts-list flex center">
         <user-list
             ng-if="contactsCtrl.contacts.length > 0"
