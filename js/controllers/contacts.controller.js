@@ -5,12 +5,12 @@
         .module('AngularContacts')
         .controller('ContactsController', ContactsController);
 
-    ContactsController.$inject = ['ContactProvider'];
-    function ContactsController(ContactProvider) {
+    ContactsController.$inject = ['ContactProvider', 'firebaseProvider'];
+    function ContactsController(ContactProvider, firebaseProvider) {
         var vm = this;
 
         // Own Variables
-        vm.contacts = {};
+        vm.contacts = [];
         vm.edit = 'init';
         vm.newContact = {
             name: "", // update by name input
@@ -31,8 +31,14 @@
         ////////////////
 
         function activate() {
-            //load users/contacts from ContactProvider (localStore)
+            vm.contacts = firebaseProvider.getAll();
+            // Testing create user in firebase
+            firebaseProvider.newUser("Pepe@correo.es", "45jjaleatorio");
+
+            /*
+            load users/contacts from ContactProvider (localStore)
             vm.contacts = ContactProvider.getAll();
+            */
         }
         function resetNewContact() {
             vm.newContact = {

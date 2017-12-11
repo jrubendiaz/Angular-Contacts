@@ -5,8 +5,8 @@
         .module('AngularContacts')
         .controller('ContactProfileController', ContactProfileController);
 
-    ContactProfileController.$inject = ['ContactProvider', '$routeParams'];
-    function ContactProfileController(ContactProvider, $routeParams) {
+    ContactProfileController.$inject = ['ContactProvider', '$routeParams', '$firebaseObject'];
+    function ContactProfileController(ContactProvider, $routeParams, $firebaseObject) {
         var vm = this;
 
         //Variables
@@ -25,7 +25,6 @@
             var id = $routeParams.id;
             vm.user = ContactProvider.get(id);
             giveMeGifs();
-            console.log(vm.list);
         }
         function giveMeGifs() {
             vm.list = vm.user.favoriteList.giphy;

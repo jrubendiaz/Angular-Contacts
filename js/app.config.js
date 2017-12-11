@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('AngularContacts', ['ngRoute']).config(config)
+    angular.module('AngularContacts', ['ngRoute', 'firebase']).config(config)
 
     config.$inject = ['$routeProvider', '$locationProvider'];
 

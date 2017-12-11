@@ -26,28 +26,29 @@
 
     <div ng-view></div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-    <script src="node_modules\angularfire\dist\angularfire.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAyXqQUGUc3xbqPeTeG9sX0cLPbk9fHpfw",
-        authDomain: "angular-contacts-76395.firebaseapp.com",
-        databaseURL: "https://angular-contacts-76395.firebaseio.com",
-        projectId: "angular-contacts-76395",
-        storageBucket: "angular-contacts-76395.appspot.com",
-        messagingSenderId: "193622058885"
-    };
-    firebase.initializeApp(config);
-    </script>
 
     <!-- Angular CORE -->
     <script src="libs/angular.js"></script>
     <script src="libs/angular-route.min.js"></script>
+     <!-- Firebase SDK -->
+     <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+     <script src="node_modules\angularfire\dist\angularfire.js"></script>
+     <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAyXqQUGUc3xbqPeTeG9sX0cLPbk9fHpfw",
+            authDomain: "angular-contacts-76395.firebaseapp.com",
+            databaseURL: "https://angular-contacts-76395.firebaseio.com",
+            projectId: "angular-contacts-76395",
+            storageBucket: "angular-contacts-76395.appspot.com",
+            messagingSenderId: "193622058885"
+        };
+        firebase.initializeApp(config);
+     </script>
     <!-- App Config -->
     <script src="js/app.config.js"></script>
     <!-- Services -->
+    <script src="js/services/firebaseProvider.factory.js"></script>
     <script src="js/services/contactsProvider.factory.js"></script>
     <script src="js/services/giphyProvider.factory.js"></script>
     <script src="js/services/marvelProvider.factory.js"></script>
