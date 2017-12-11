@@ -1,7 +1,7 @@
 <header class="flex center">
     <button class="btn btn-circle bg-pink"><i class="fab fa-angular"></i></button>
-    <small class="bg-pink">{{contactsCtrl.user.email}}</small>
-    <button class="btn btn-circle bg-pink"><i class="fas fa-sign-out-alt"></i></button>
+    <small ng-if="contactsCtrl.user.email" class="bg-pink">{{contactsCtrl.user.email}}</small>
+    <button ng-if="contactsCtrl.user.email" class="btn btn-circle bg-pink"><i class="fas fa-sign-out-alt" ng-click="contactsCtrl.logout()"></i></button>
 </header>
 <main ng-if="!contactsCtrl.user.email" class="flex center">
     <create-user-form user="contactsCtrl.user">

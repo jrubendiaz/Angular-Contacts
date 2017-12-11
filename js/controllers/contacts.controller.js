@@ -5,8 +5,8 @@
         .module('AngularContacts')
         .controller('ContactsController', ContactsController);
 
-    ContactsController.$inject = ['ContactProvider', 'firebaseProvider'];
-    function ContactsController(ContactProvider, firebaseProvider) {
+    ContactsController.$inject = ['ContactProvider', 'firebaseProvider', '$scope'];
+    function ContactsController(ContactProvider, firebaseProvider, $scope) {
         var vm = this;
 
         // Own Variables
@@ -26,6 +26,7 @@
         // Own Functions
         vm.addContact = addContact;
         vm.addTest = addTest;
+        vm.logout = logout;
 
         activate();
 
@@ -42,7 +43,6 @@
             */
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
-                  console.log(user)
                   // User is signed in.
                   vm.user.email = user.email;
                   vm.user.uid = user.uid;
@@ -84,6 +84,13 @@
             //reload users/contacts from localStore using ContactProvider methods
             vm.contacts = ContactProvider.getAll();
             resetNewContact();
+        }
+        function logout() {
+            firebaseProvider.logout().then(res => {
+                $scope.$apply(() => {
+                    res ? vm.user = {} : "";
+                })
+            })
         }
     }
 })();

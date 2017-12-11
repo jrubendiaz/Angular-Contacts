@@ -5,11 +5,12 @@
         .module('AngularContacts')
         .factory('firebaseProvider', firebaseProvider);
 
-    firebaseProvider.$inject = ['$firebaseArray', '$firebaseObject', '$firebaseAuth'];
+    firebaseProvider.$inject = ['$firebaseArray','$firebaseObject', '$firebaseAuth'];
     function firebaseProvider($firebaseArray, $firebaseObject, $firebaseAuth) {
         var service = {
             getAll: getAll,
             newUser: newUser,
+            logout: logout,
         };
 
         return service;
@@ -27,6 +28,13 @@
                 var errorMessage = error.message;
                 return (errorCode, errorMessage);
                 // ...
+              });
+        }
+        function logout() {
+            return firebase.auth().signOut().then(function() {
+                return true;
+              }).catch(function(error) {
+                return false;
               });
         }
     }
