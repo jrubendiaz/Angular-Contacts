@@ -274,13 +274,7 @@ small {
         .gif-item img {
             max-width: 100%;
         }
-.favorite-list .comic-item {
-    max-height: 180px;
-    flex: 1;
-}
-.favorite-list .comic-item img {
-    max-height: 180px;
-}
+
 
 /* STYLES FOR ADD NEW USER */
 .add-new-user-container {
@@ -323,7 +317,7 @@ header {
     color: #ffffff;
 }
 .white {
-    color: rgba(240,240,240, 1);
+    color: #ffffff;
 }
 .bg-white {
     background-color: #ffffff;

@@ -3,8 +3,13 @@
         <strong>Favoritos</strong>
     </label>
 </div>
-<div class="comic-item-container flex center">
-    <div ng-click="vm.removeFromList(fav.id)" class="comic-item center" ng-repeat="fav in vm.list">
-        <img src="{{fav.photo}}" alt="">
+<div class="favorite-list">
+    <div class="favorite-item-container flex center">
+        <div
+        ng-click="vm.removeFromList(fav.id)"
+        class="favorite-item center"
+        ng-repeat="fav in vm.list">
+            <img src="{{fav.photo}}" alt="">
+        </div>
     </div>
 </div>

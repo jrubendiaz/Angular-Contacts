@@ -27,6 +27,7 @@
         vm.input = "";
         vm.limit = 9;
         vm.timeoutID = "";
+        vm.placeholders = [];
 
         //Functions
         vm.giveMeGifs = giveMeGifs;
@@ -36,7 +37,9 @@
 
         ////////////////
 
-        vm.$onInit = function() { };
+        vm.$onInit = function() {
+            buildPlaceholders();
+        };
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };
 
@@ -46,7 +49,11 @@
                 vm.timeoutID = window.setTimeout(giveMeGifs, 1500);
             }
         }
-
+        function buildPlaceholders() {
+            for(var i = 0; i < vm.limit; i++) {
+                vm.placeholders.push("a");
+            }
+        }
         function giveMeGifs() {
             GiphyProvider.giveMeGifs(vm.input, vm.offset)
                             .then(gifs => {
